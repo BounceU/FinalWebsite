@@ -51,6 +51,20 @@ function resetEverything() {
     canvas.height = height;
     canvas.style.imageRendering = "pixelated";
 
+    g.fillStyle = "rgb(255,255,255)";
+    g.fillRect(0, 0, graph.width, graph.height);
+    g.strokeStyle = "rgb(200,0,0)";
+    g.beginPath();
+    g.moveTo(5, graph.height - 5);
+    g.lineTo(graph.width, graph.height - 5);
+    g.stroke();
+    g.strokeStyle = "rgb(0,200,0)";
+    g.beginPath();
+    g.moveTo(5, 0);
+    g.lineTo(5, graph.height - 5);
+    g.stroke();
+
+
     preyOdds = 0.2;
     predOdds = 0.01;
     deadOdds = 0.4;
@@ -138,8 +152,13 @@ worker.onmessage = function(e) {
 
 function constructCanvas(useCells) {
 
+    g.fillStyle = "rgba(255,255,255,0.017)"
+    g.fillRect(10, 0, graph.width - 10, graph.height - 10);
+
+
+
     g.fillStyle = "rgb(0,0,0)";
-    g.fillRect(numRed / (width * height) * 200, numGreen / (width * height) * 200, 1, 1);
+    g.fillRect(numRed / (width * height) * (graph.width * 2 - 20), graph.height - numGreen / (width * height) * (graph.height * 2 - 20), 1, 1);
 
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, width, height);
