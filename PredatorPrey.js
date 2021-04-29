@@ -2,7 +2,7 @@ var canvas = document.getElementById('predPreyCanvas');
 var ctx = canvas.getContext('2d');
 
 var graph = document.getElementById('graph');
-var g = graph.getcontext('2d');
+var g = graph.getContext('2d');
 
 // Each cell will take the form of [health, state, nextHealth, nextState]
 // We go through each cell and decide where it's gonna move, putting that into it's next state.
