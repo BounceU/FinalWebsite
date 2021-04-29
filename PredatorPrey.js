@@ -1,6 +1,9 @@
 var canvas = document.getElementById('predPreyCanvas');
 var ctx = canvas.getContext('2d');
 
+var graph = document.getElementById('graph');
+var g = graph.getcontext('2d');
+
 // Each cell will take the form of [health, state, nextHealth, nextState]
 // We go through each cell and decide where it's gonna move, putting that into it's next state.
 // When we test against a cell, we will test against its "next state/health" if it has them.
@@ -20,6 +23,9 @@ var height = 100;
 canvas.width = width;
 canvas.height = height;
 canvas.style.imageRendering = "pixelated";
+
+graph.width = 200;
+graph.height = 200;
 
 var preyOdds = 0.2;
 var predOdds = 0.01;
@@ -131,6 +137,9 @@ worker.onmessage = function(e) {
 
 
 function constructCanvas(useCells) {
+
+    g.fillStyle = "rgb(0,0,0)";
+    g.fillRect(numRed / (width * height) * 200, numGreen / (width * height) * 200, 1, 1);
 
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, width, height);
