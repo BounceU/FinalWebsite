@@ -290,8 +290,8 @@ function manipulateCells() {
 
                         cell.health += 1;
                         if (cell.health > preyHealthVal) {
-                            cell.health /= 2;
-                            cells[movingTo.x + movingTo.y * width].health = cell.health;
+                            cell.health = Math.floor(Math.random() * preyHealthVal / 2);
+                            cells[movingTo.x + movingTo.y * width].health = Math.floor(Math.random() * preyHealthVal / 2);;
                             cells[x + y * width].health = cell.health;
                             cells[movingTo.x + movingTo.y * width].state = 1;
                             cells[movingTo.x + movingTo.y * width].nextState = 1;
