@@ -158,7 +158,7 @@ function constructCanvas(useCells) {
 
 
     g.fillStyle = "rgb(0,0,0)";
-    g.fillRect(numRed / (width * height) * (graph.width * 2 - 20), graph.height - numGreen / (width * height) * (graph.height * 2 - 20), 1, 1);
+    g.fillRect(numRed / (width * height) * (graph.width * 2 - 20) + 10, graph.height - numGreen / (width * height) * (graph.height * 2 - 20) - 10, 1, 1);
 
     ctx.fillStyle = "rgb(255,255,255)";
     ctx.fillRect(0, 0, width, height);
