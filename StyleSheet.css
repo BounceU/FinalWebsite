@@ -230,3 +230,62 @@ section a:active {
     /* Non-prefixed version, currently
     supported by Chrome, Edge, Opera and Firefox */
 }
+
+@media only screen and (max-device-width: 480px) and (orientation: portrait) {
+    .show-mobile {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    aside {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    section#project {
+        display: none;
+    }
+    main {
+        display: block;
+        overflow: auto;
+    }
+    #usegrad1 {
+        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    }
+    #usegrad2 {
+        background-image: linear-gradient(to top, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.2));
+    }
+    #currentPage {
+        background-image: radial-gradient(circle, rgba(255, 0, 0, 0.6), rgba(0, 0, 0, 0.2));
+    }
+}
+
+@media only screen and (max-device-height: 480px) and (orientation: landscape) {
+    .show-mobile {
+        display: block;
+    }
+    .hide-mobile {
+        display: none;
+    }
+    aside {
+        display: none;
+    }
+    section#project {
+        display: block;
+        height: 100%;
+    }
+    main {
+        display: block;
+    }
+    .projectView {
+        box-sizing: border-box;
+        background-color: #31D618;
+        text-align: center;
+        border-radius: 2%;
+        padding: 2%;
+        margin: auto;
+        width: 50%;
+    }
+}
+
+@media only screen and (min-device-width: 481px) and (min-device-height:481px) {}
